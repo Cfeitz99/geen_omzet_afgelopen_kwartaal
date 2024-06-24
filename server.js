@@ -12,15 +12,15 @@ app.use((req, res, next) => {
 });
 
 app.get('/', async (req, res) => {
-  const { contact_id } = req.query;
+  const { deal_id } = req.query;
 
-  // Trigger the webhook for every request with a contact_id
-  if (contact_id) {
+  // Trigger the webhook for every request with a deal_id
+  if (deal_id) {
     try {
-      await axios.post('https://hooks.zapier.com/hooks/catch/14846189/3no10m7/', { contact_id });
-      console.log(`Webhook triggered for contact_id ${contact_id}`);
+      await axios.post('https://hooks.zapier.com/hooks/catch/14846189/3vgmv81/', { deal_id });
+      console.log(`Webhook triggered for deal_id ${deal_id}`);
     } catch (error) {
-      console.error(`Failed to trigger webhook for contact_id ${contact_id}: ${error}`);
+      console.error(`Failed to trigger webhook for deal_id ${deal_id}: ${error}`);
     }
   }
 
